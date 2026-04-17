@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowRight, Zap, ChevronRight } from 'lucide-react';
+import { ArrowRight, Zap, ChevronRight, Play } from 'lucide-react';
 import Nav from '@/components/nav';
 import HeroTerminal from '@/components/hero-terminal';
 import Testimonials from '@/components/testimonials';
@@ -52,19 +52,28 @@ export default function HomePage() {
           </p>
 
           <div
-            className="flex flex-col items-center gap-3 animate-slide-up"
+            className="flex flex-col items-center gap-4 animate-slide-up"
             style={{ animationDelay: '0.3s', opacity: 0 }}
           >
-            <a
-              href="https://link.depay.com/6KsEIwZjv48aUyZeOTOs6s"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative inline-flex items-center gap-3 bg-[#00ff88] text-[#080808] font-bold text-lg px-9 py-4 rounded-xl hover:bg-[#00e87c] transition-all duration-200 animate-glow-pulse"
-            >
-              <Zap className="w-5 h-5" />
-              {t.hero.cta}
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
+            <div className="flex flex-col sm:flex-row items-center gap-3">
+              <a
+                href="https://link.depay.com/6KsEIwZjv48aUyZeOTOs6s"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative inline-flex items-center gap-3 bg-[#00ff88] text-[#080808] font-bold text-lg px-9 py-4 rounded-xl hover:bg-[#00e87c] transition-all duration-200 animate-glow-pulse"
+              >
+                <Zap className="w-5 h-5" />
+                {t.hero.cta}
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
+              <button
+                onClick={() => router.push('/dashboard')}
+                className="group inline-flex items-center gap-2.5 border border-white/20 text-white font-semibold text-base px-7 py-4 rounded-xl bg-transparent hover:bg-white/5 transition-all duration-200"
+              >
+                <Play className="w-4 h-4 fill-white/70 text-white/70 group-hover:fill-white group-hover:text-white transition-colors" />
+                {t.hero.viewDemo}
+              </button>
+            </div>
             <p className="text-xs text-red-400/75 font-semibold tracking-wide">⚠ {t.hero.urgency}</p>
           </div>
 

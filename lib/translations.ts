@@ -18,6 +18,7 @@ export const translations = {
       cta: 'Secure Beta Spot ($99 USDC)',
       urgency: 'Only 41 of 100 Beta spots remaining.',
       devBypass: 'dev',
+      viewDemo: 'View Demo',
     },
     stats: {
       profit: 'Total Profit Generated',
@@ -161,6 +162,7 @@ export const translations = {
       cta: '获取内测名额 ($99 USDC)',
       urgency: '100个内测名额仅剩41个。',
       devBypass: 'dev',
+      viewDemo: '查看演示',
     },
     stats: {
       profit: '累计利润总额',
