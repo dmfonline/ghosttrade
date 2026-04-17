@@ -68,29 +68,33 @@ export default function DashboardPage() {
 
       {/* Demo mode banner */}
       <div
-        className="flex-shrink-0 flex items-center justify-center gap-2 py-2.5 px-4 text-center border-b border-amber-500/20"
+        className="flex-shrink-0 flex flex-col md:flex-row items-center justify-center gap-1 md:gap-2 py-2 md:py-1.5 px-4 text-center border-b border-amber-500/20"
         style={{
           background: 'linear-gradient(90deg, transparent, rgba(245,158,11,0.06) 30%, rgba(245,158,11,0.06) 70%, transparent)',
           boxShadow: '0 1px 0 rgba(245,158,11,0.08), inset 0 1px 0 rgba(245,158,11,0.05)',
         }}
       >
-        <span className="inline-block w-1.5 h-1.5 rounded-full bg-amber-400 shadow-[0_0_6px_rgba(245,158,11,0.8)] animate-pulse" />
-        <span className="text-amber-400/90 text-xs font-semibold tracking-widest uppercase">
-          Demo Mode: AI Execution is disabled.
-        </span>
-        <span className="text-white/20 text-xs">|</span>
-        <a
-          href="https://link.depay.com/6KsEIwZjv48aUyZeOTOs6s"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-xs font-semibold text-[#00ff88]/80 hover:text-[#00ff88] transition-colors duration-150 tracking-wide"
-        >
-          Purchase Beta Pass to Unlock
-        </a>
+        <div className="flex items-center gap-2">
+          <span className="inline-block w-1.5 h-1.5 rounded-full bg-amber-400 shadow-[0_0_6px_rgba(245,158,11,0.8)] animate-pulse flex-shrink-0" />
+          <span className="text-amber-400/90 text-xs font-semibold tracking-widest uppercase">
+            Demo Mode: AI Execution is disabled.
+          </span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-white/20 text-xs hidden md:block">|</span>
+          <a
+            href="https://link.depay.com/6KsEIwZjv48aUyZeOTOs6s"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs font-semibold text-[#00ff88]/80 hover:text-[#00ff88] transition-colors duration-150 tracking-wide"
+          >
+            Purchase Beta Pass to Unlock
+          </a>
+        </div>
       </div>
 
       {/* Dashboard-specific compact top bar */}
-      <header className="flex-shrink-0 flex items-center justify-between px-5 py-3 border-b border-white/5 bg-[#0a0a0a] z-40">
+      <header className="flex-shrink-0 flex items-center justify-between px-3 md:px-5 py-3 border-b border-white/5 bg-[#0a0a0a] z-40">
         <div className="flex items-center gap-4">
           <Link href="/" className="flex items-center gap-2 group">
             <div className="w-7 h-7 rounded-lg bg-[#00ff88]/10 border border-[#00ff88]/20 flex items-center justify-center group-hover:bg-[#00ff88]/15 transition-colors">
@@ -124,11 +128,11 @@ export default function DashboardPage() {
 
           <button
             onClick={triggerPaywall}
-            className="flex items-center gap-2.5 bg-white/4 border border-white/8 rounded-xl px-3 py-2 hover:border-white/15 transition-all cursor-pointer"
+            className="flex items-center gap-1.5 md:gap-2.5 bg-white/4 border border-white/8 rounded-xl px-2.5 md:px-3 py-2 hover:border-white/15 transition-all cursor-pointer"
           >
-            <DollarSign className="w-3.5 h-3.5 text-white/40" />
-            <span className="text-base font-bold text-white tracking-tight">$14,250.45</span>
-            <span className="flex items-center gap-1 text-xs font-semibold text-[#00ff88] bg-[#00ff88]/10 px-2 py-0.5 rounded-full">
+            <DollarSign className="w-3.5 h-3.5 text-white/40 flex-shrink-0" />
+            <span className="text-sm md:text-base font-bold text-white tracking-tight">$14,250.45</span>
+            <span className="hidden sm:flex items-center gap-1 text-xs font-semibold text-[#00ff88] bg-[#00ff88]/10 px-2 py-0.5 rounded-full">
               <TrendingUp className="w-3 h-3" />
               +12.4%
             </span>
@@ -210,12 +214,12 @@ export default function DashboardPage() {
           )}
 
           {/* AI Terminal */}
-          <div className="flex-shrink-0 px-4 pt-4 pb-3">
+          <div className="flex-shrink-0 px-3 md:px-4 pt-3 md:pt-4 pb-3">
             <div
               className="relative bg-[#111111] rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer bento-card-glow hover:border-[#00ff88]/25"
               onClick={triggerPaywall}
             >
-              <div className="flex items-center gap-2 px-4 pt-4 pb-1">
+              <div className="flex items-center gap-2 px-3 md:px-4 pt-3 md:pt-4 pb-1">
                 <Sparkles className="w-4 h-4 text-[#00ff88] flex-shrink-0" />
                 <span className="text-xs font-medium text-[#00ff88]">{t.dashboard.aiTerminal}</span>
                 <span className="ml-auto text-[10px] text-white/20 terminal-font">{t.dashboard.deployShortcut}</span>
@@ -227,12 +231,12 @@ export default function DashboardPage() {
                 onFocus={triggerPaywall}
                 onClick={(e) => { e.stopPropagation(); triggerPaywall(); }}
                 placeholder={t.dashboard.placeholder}
-                className="w-full bg-transparent px-4 py-3 text-sm text-white placeholder-white/20 resize-none outline-none leading-relaxed min-h-[60px] cursor-pointer"
+                className="w-full bg-transparent px-3 md:px-4 py-3 text-sm text-white placeholder-white/20 resize-none outline-none leading-relaxed min-h-[60px] cursor-pointer"
                 rows={2}
               />
 
               {/* Scanning bar */}
-              <div className="mx-4 mb-3 flex items-center gap-3 bg-black/30 border border-white/5 rounded-xl px-3 py-2.5 overflow-hidden relative">
+              <div className="mx-3 md:mx-4 mb-3 flex items-center gap-3 bg-black/30 border border-white/5 rounded-xl px-3 py-2.5 overflow-hidden relative">
                 <div className="flex-shrink-0 relative w-3 h-3">
                   <span className="absolute inset-0 rounded-full border border-[#00ff88]/60 border-t-[#00ff88] animate-spin" />
                 </div>
@@ -248,7 +252,7 @@ export default function DashboardPage() {
                 <div className="absolute top-0 bottom-0 w-8 bg-gradient-to-r from-transparent via-[#00ff88]/8 to-transparent animate-radar-scan" />
               </div>
 
-              <div className="flex items-center gap-2 px-4 pb-3">
+              <div className="flex items-center gap-2 px-3 md:px-4 pb-3">
                 <div className="flex gap-1.5 flex-wrap">
                   {EXAMPLE_PROMPTS.slice(0, 2).map((ex, i) => (
                     <button
@@ -272,7 +276,7 @@ export default function DashboardPage() {
           </div>
 
           {/* Live Execution Feed */}
-          <div className="flex-shrink-0 mx-4 mb-3 bg-[#0d0d0d] rounded-2xl overflow-hidden bento-card" style={{ minHeight: 280 }}>
+          <div className="flex-shrink-0 mx-3 md:mx-4 mb-3 bg-[#0d0d0d] rounded-2xl overflow-hidden bento-card" style={{ minHeight: 280 }}>
             <ExecutionFeed />
           </div>
 
